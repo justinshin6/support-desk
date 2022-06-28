@@ -1,12 +1,12 @@
-// common syntax for express
-
 
 const express = require('express')
 const colors = require('colors')
 const dotenv = require('dotenv').config()
+// get ErrorHanlder from errorMiddleware 
 const {errorHandler} = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
 
+// local port that we are running server on 
 const PORT = process.env.PORT || 3000
 
 
