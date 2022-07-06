@@ -19,20 +19,22 @@ function Login() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
+    // get state from the current state 
     const {user, isLoading, isError, isSuccess, message} = useSelector(state => state.auth)
 
     useEffect(() => {
+        // if there is an error, output an error message 
         if (isError) {
           toast.error(message)
         }
     
         // Redirect when logged in
         if (isSuccess) {
-          console.log("This isn't supposed to be happening")
           navigate('/')
     
         }
     
+        // reset the state 
         dispatch(reset())
     
       }, [isError, isSuccess, user, message, navigate, dispatch])
@@ -54,6 +56,7 @@ function Login() {
         dispatch(login(userData))
     }
 
+    // if loading, then show spinner 
     if(isLoading) {
         <Spinner/> 
     }

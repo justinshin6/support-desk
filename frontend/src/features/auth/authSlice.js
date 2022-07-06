@@ -4,12 +4,14 @@ import authService from './authService'
 // Get user from localstorage
 const user = JSON.parse(localStorage.getItem('user'))
 
+// set up the initial state 
 const initialState = {
-  user: user ? user : null,
-  isError: false,
-  isSuccess: false,
-  isLoading: false,
-  message: '',
+    // if there is a user, then output user, if not, then set to null
+    user: user ? user : null,
+    isError: false,
+    isSuccess: false,
+    isLoading: false,
+    message: '',
 }
 
 // Register new user
@@ -19,13 +21,15 @@ export const register = createAsyncThunk(
     try {
       return await authService.register(user)
     } catch (error) {
+      // retrieve the error message 
       const message =
         (error.response &&
           error.response.data &&
           error.response.data.message) ||
         error.message ||
         error.toString()
-
+      
+      // reject with the thunkAPI
       return thunkAPI.rejectWithValue(message)
     }
   }
@@ -36,11 +40,13 @@ export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
   try {
     return await authService.login(user)
   } catch (error) {
+    // retrieve the error message 
     const message =
       (error.response && error.response.data && error.response.data.message) ||
       error.message ||
       error.toString()
 
+    // reject with the thunkAPI
     return thunkAPI.rejectWithValue(message)
   }
 })
@@ -54,6 +60,7 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
+    // used to reset the current state 
     reset: (state) => {
       state.isLoading = false
       state.isError = false
@@ -61,6 +68,7 @@ export const authSlice = createSlice({
       state.message = ''
     },
   },
+  // changes made to specific register, login, and logout instances 
   extraReducers: (builder) => {
     builder
       .addCase(register.pending, (state) => {
@@ -101,5 +109,7 @@ export const authSlice = createSlice({
   },
 })
 
+// export reset from reducers 
 export const { reset } = authSlice.actions
+// export all reducers 
 export default authSlice.reducer

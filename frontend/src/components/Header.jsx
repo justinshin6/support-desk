@@ -7,15 +7,16 @@ function Header() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    // get the current user if not null
     const {user} = useSelector((state) => state.auth)
 
+    // function called when logout button is pressed
     const onLogout = () => {
         dispatch(logout())
         dispatch(reset())
         navigate('/')
-        console.log("Hello?")
     }
-    
+
     return (
         <header className='header'>
           <div className='logo'>
