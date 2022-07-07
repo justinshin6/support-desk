@@ -1,6 +1,8 @@
 import {Link} from 'react-router-dom'
-
+import {useState} from 'react'
 function TicketItem({ticket}) {
+
+
     return (
         <div className='ticket'>
             <div>{new Date(ticket.createdAt).toLocaleString('en-US')}</div>

@@ -99,7 +99,6 @@ function Ticket() {
             {ticket.status !== 'closed' && (
                 <button onClick={openModal} className="btn"><FaPlus/> Add Note</button>
             )}
-
             
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal}
             style={customStyles} contentLabel='Add Note'>

@@ -31,7 +31,7 @@ function Register() {
 
     // Redirect when logged in
     if (isSuccess) {
-      console.log("This isn't supposed to be happening")
+      toast.success('Successfully registered new user')
       navigate('/')
 
     }
@@ -49,8 +49,11 @@ function Register() {
 
   const onSubmit = (e) => {
     e.preventDefault()
-
-    if (password !== password2) {
+    const characters = 6
+    if (password.length < characters) {
+      toast.error(`Passoword must be at least ${characters} characters`)
+    }
+    else if (password !== password2) {
       toast.error('Passwords do not match')
     } else {
       const userData = {

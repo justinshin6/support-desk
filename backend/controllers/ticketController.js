@@ -20,20 +20,21 @@ const getTickets = asyncHandler(async (req, res) => {
     res.status(200).json(tickets)
 })
 
-// @desc Get user tickets 
+// @desc Get user ticket
 // @route GET /api/tickets/:id
-// @access Private 
+// @access Private  
 const getTicket = asyncHandler(async (req, res) => {
     // Get user using the id in the JWT
     const user = await User.findById(req.user.id)
 
     if(!user) {
-        res.status(401)
+        res.status(401) 
         throw new Error('User not found')
     }
 
     // get ticket from the url
     const ticket = await Ticket.findById(req.params.id)
+    
 
     if(!ticket) {
         res.status(404)
@@ -45,6 +46,7 @@ const getTicket = asyncHandler(async (req, res) => {
         res.status(401)
         throw new Error('Not Authorized')
     }
+    
     res.status(200).json(ticket)
 })
 
