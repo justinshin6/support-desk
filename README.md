@@ -23,8 +23,7 @@ the application through Heroku.
 and the backend, how to use a database (MongoDB Compass) to store user data, inserting user authentication 
 into my application, as well as learning good design patterns such as the MVC (Model, View, Controller) 
 design architecture pattern. 
-## How to Use 
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
 
 
 
