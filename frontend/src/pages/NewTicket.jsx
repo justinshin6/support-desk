@@ -63,7 +63,7 @@ function NewTicket() {
         </div>
         <form onSubmit={onSubmit}>
           <div className='form-group'>
-            <label htmlFor='product'>Product</label>
+            <label htmlFor='product'>Topic</label>
             <select
               name='product'
               id='product'
