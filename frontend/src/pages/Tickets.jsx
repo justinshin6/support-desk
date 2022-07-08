@@ -35,7 +35,7 @@ function Tickets() {
         
             <div className="ticket-headings">
                 <div>Date</div>
-                <div>Product</div>
+                <div>Topic</div>
                 <div>Status</div>
                 <div></div>
             </div>

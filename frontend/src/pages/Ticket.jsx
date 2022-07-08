@@ -29,7 +29,7 @@ Modal.setAppElement('#root')
 function Ticket() {
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const [noteText, setNoteText] = useState('')
-    const {ticket, isLoading, isSuccess, isError, message} = useSelector((state) => state.tickets)
+    const {ticket, isLoading, isError, message} = useSelector((state) => state.tickets)
     const {notes, isLoading: notesIsLoading} = useSelector((state) => state.notes)
 
 
@@ -87,7 +87,7 @@ function Ticket() {
                 <h3>
                     Date Submitted: {new Date(ticket.createdAt).toLocaleString('en-US')}
                 </h3>
-                <h3>Product: {ticket.product}</h3>
+                <h3>Topic: {ticket.product}</h3>
                 <hr></hr>
                 <div className="ticket-desc">
                     <h3>Description of Issue</h3>
