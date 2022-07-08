@@ -31,7 +31,7 @@ function Register() {
 
     // Redirect when logged in
     if (isSuccess) {
-      toast.success('Successfully registered new user')
+      toast.success('Successfully Registered User')
       navigate('/')
 
     }

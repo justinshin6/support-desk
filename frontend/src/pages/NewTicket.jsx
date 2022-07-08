@@ -27,7 +27,7 @@ function NewTicket() {
     }
 
     if (isSuccess) {
-      toast.success('Successfully created new ticket')
+      toast.success('Successfully Created New Ticket')
       dispatch(reset())
       navigate('/tickets')
     }
