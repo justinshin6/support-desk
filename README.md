@@ -9,6 +9,11 @@ my summer job as a coding instructor, I had to submit help desk requests about c
 that I was experiencing throughout the summer, and I thought that would be an interesting personal
 project to try to recreate because this support desk was very helpful for me during my job during
 the summer. 
+- During the summer, as the lead instructor, I was in charge of handling medication to students at 
+the camp, assisting with taking students to the dining hall areas, as well as troubleshooting any 
+issues related with the laptops that we were using throughout the summer. Since these were the main
+topics that I usually sent help desk requests during my job, I chose these as the potential subjects
+that a user can submit a help desk ticket. 
 ## Technologies Used
 - For this full-stack application, I was able to use numerous different technologies. First, I used the 
 MERN (MongoDB, Express.js, React.js, Node.js) to make the application. Additionally, I used Redux Toolkit
